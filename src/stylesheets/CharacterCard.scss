@@ -1,7 +1,7 @@
 .character-card {
-  background-color: honeydew;
+  background-color: rgb(255, 255, 255);
   border-style: solid;
-  border-color: orange;
+  border-color: lightgreen;
   display: inline-block;
   border-radius: 6%;
   text-align: center;
@@ -29,5 +29,5 @@
 }
 .name {
   font-size: 20px;
-  overflow-wrap: ;
+  overflow-wrap: wrap;
 }

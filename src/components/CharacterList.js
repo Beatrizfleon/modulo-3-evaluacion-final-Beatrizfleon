@@ -1,7 +1,7 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
-import '../stylesheets/CharacterCard.css';
-import '../stylesheets/App.css';
+import '../stylesheets/CharacterCard.scss';
+import '../stylesheets/App.scss';
 
 const CharacterList = (props) => {
   // console.log(props);

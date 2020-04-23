@@ -5,12 +5,15 @@ const getDataFromApi = () => {
       // console.log(data.results);
 
       return data.results.map((character) => {
-        // console.log(character.species);
+        // console.log(character.episode.length);
         return {
           id: character.id,
           image: character.image,
           name: character.name,
           species: character.species,
+          status: character.status,
+          origin: character.origin.name,
+          episodes: character.episode.length,
         };
       });
     });
