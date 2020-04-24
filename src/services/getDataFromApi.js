@@ -5,7 +5,7 @@ const getDataFromApi = () => {
       // console.log(data.results);
 
       return data.results.map((character) => {
-        // console.log(character.episode.length);
+        // console.log(character.origin.name);
         return {
           id: character.id,
           image: character.image,

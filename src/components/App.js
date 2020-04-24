@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Header from './Header';
 import CharacterList from './CharacterList';
 import Filter from './Filter';
 import getDataFromApi from '../services/getDataFromApi';
@@ -38,16 +39,22 @@ const App = () => {
     });
     // console.log(foundCharacter);
     if (foundCharacter !== undefined) {
-      return <CharacterDetail character={foundCharacter} />;
+      return <CharacterDetail handleInput={goHome} character={foundCharacter} inputValue={nameFilter} />;
     }
+  };
+
+  const goHome = (previousFilter) => {
+    console.log(`filtro inicial:${previousFilter}`);
+    setNameFilter(previousFilter);
   };
 
   return (
     <div className='App'>
+      <Header />
       <Switch>
         <Route exact path='/'>
-          <Filter handleFilter={handleFilter} />
-          <CharacterList characters={filteredCharacters} />
+          <Filter handleFilter={handleFilter} previousFilter={nameFilter} />
+          <CharacterList characters={filteredCharacters} inputValue={nameFilter} />
         </Route>
         <Route path='/character/:id' render={renderCharacterDetail}></Route>
       </Switch>
