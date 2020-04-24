@@ -55,9 +55,11 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Filter handleFilter={handleFilter} />
-      <CharacterList characters={filteredCharacters} />
       <Switch>
+        <Route exact path='/'>
+          <Filter handleFilter={handleFilter} />
+          <CharacterList characters={filteredCharacters} />
+        </Route>
         <Route path='/character/:id' render={renderCharacterDetail}></Route>
       </Switch>
     </div>

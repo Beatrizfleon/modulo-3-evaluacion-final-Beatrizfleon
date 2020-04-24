@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Emoji from './Emoji';
 
 import '../stylesheets/CharacterDetail.scss';
@@ -29,7 +30,14 @@ const CharacterDetail = (props) => {
     <div className='character-detail'>
       <img className='image' src={props.character.image} alt={`Foto de ${props.character.image}`}></img>
       <div className='character-detail-text'>
-        <h2 className='character-name'>{props.character.name}</h2>
+        <header className='character-header'>
+          <Link to='/'>
+            <span>
+              <i class='far fa-times-circle'></i>
+            </span>
+          </Link>
+          <h2 className='character-name'>{props.character.name}</h2>
+        </header>
         <ul className='character-description'>
           <li className='character-species'>Species:{species}</li>
           <li className='character-status'>Status:{status}</li>
