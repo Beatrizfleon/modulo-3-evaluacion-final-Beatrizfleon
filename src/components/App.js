@@ -8,19 +8,6 @@ import CharacterDetail from './CharacterDetail';
 import '../stylesheets/App.scss';
 
 const App = () => {
-  // let dummy = {
-  //   id: 1,
-  //   name: 'Rick Sanchez',
-  //   status: 'Alive',
-  //   species: 'Human',
-  //   type: '',
-  //   gender: 'Male',
-  //   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-  //   created: '2017-11-04T18:48:46.250Z',
-  //   episode: [1, 2, 3],
-  //   origin: { name: 'lalala' },
-  // };
-
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
 
@@ -49,8 +36,10 @@ const App = () => {
       // console.log(`characterId=${characterId}  characted.id=${character.id} son iguales?-> ${parseInt(characterId) === parseInt(character.id)}`);
       return parseInt(characterId) === character.id;
     });
-    console.log(foundCharacter);
-    return <CharacterDetail character={foundCharacter} />;
+    // console.log(foundCharacter);
+    if (foundCharacter !== undefined) {
+      return <CharacterDetail character={foundCharacter} />;
+    }
   };
 
   return (
