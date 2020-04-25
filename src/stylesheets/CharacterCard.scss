@@ -1,8 +1,25 @@
+.character-card-link {
+  text-decoration: none;
+  color: green;
+}
+
+.character-card-link:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.character-card-link:hover {
+  text-decoration: none;
+  color: yellow;
+}
+
 .character-card {
-  background-color: rgb(255, 255, 255);
+  background-color: #69c8ecff;
   border-style: solid;
   border-color: lightgreen;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 6%;
   text-align: center;
   height: 280px;
@@ -10,25 +27,21 @@
   margin: 10px;
 }
 
-.image {
+.character-title {
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+.character-image {
   height: 180px;
   border-radius: 6%;
 }
-// .items-list {
-//   display: flex;
-//   list-style-type: none;
-//   flex-wrap: wrap;
-//   justify-content: space-evenly;
-// }
-// .character-list {
-//   position: absolute;
-//   text-align: center;
-//   top: 35%;
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-// }
-.name {
+
+.character-name {
   font-size: 20px;
   overflow-wrap: wrap;
+  text-decoration: none;
 }

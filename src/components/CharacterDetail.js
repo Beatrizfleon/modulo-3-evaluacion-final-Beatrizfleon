@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Emoji from './Emoji';
+import Rick from '../images/Rick.png';
 
 import '../stylesheets/CharacterDetail.scss';
 import '../stylesheets/App.scss';
@@ -13,6 +13,8 @@ const CharacterDetail = (props) => {
     props.handleInput(props.inputValue);
   };
 
+  console.log(`qué es props.character ${props.character}`);
+
   if (props.character === undefined) {
     console.log('es undefined');
     return <h1>No ha seleccionado ningún personaje</h1>;
@@ -21,7 +23,7 @@ const CharacterDetail = (props) => {
     if (props.character.status === 'Alive') {
       newStatus = (
         <span>
-          Alive<i className='far fa-smile'></i>
+          Alive <i className='far fa-smile'></i>
         </span>
       );
     } else if (props.character.status === 'Dead') {
@@ -44,6 +46,7 @@ const CharacterDetail = (props) => {
       props.character.species === 'Human' ? (
         <span>
           Human
+          {''}
           <i className='fas fa-female'></i>
           <i className='fas fa-male'></i>
         </span>
@@ -54,23 +57,28 @@ const CharacterDetail = (props) => {
       );
 
     return (
-      <div className='character-detail'>
-        <img className='image' src={props.character.image} alt={`Foto de ${props.character.image}`}></img>
-        <div className='character-detail-text'>
-          <header className='character-header'>
-            <Link to='/'>
-              <span>
-                <i className='far fa-times-circle' onClick={handleGoHome}></i>
-              </span>
-            </Link>
-            <h2 className='character-name'>{props.character.name}</h2>
-          </header>
-          <ul className='character-description'>
-            <li className='character-species'>Species:{species}</li>
-            <li className='character-status'>Status:{newStatus}</li>
-            <li className='character-origin'>Origin:{props.character.origin}</li>
-            <li className='character-episodes'>Episodes:{props.character.episodes}</li>
-          </ul>
+      <div className='character-detail-container'>
+        <Link to='/'>
+          <div className='header-return'>
+            <span>
+              <img className='character-detail-icon' src={Rick} alt='return-icon' onClick={handleGoHome}></img>
+            </span>
+            <span className='header-return-text'>Go Back</span>
+          </div>
+        </Link>
+        <div className='character-detail-card'>
+          <img className='character-detail-image' src={props.character.image} alt={`Foto de ${props.character.image}`}></img>
+          <div className='character-detail-text'>
+            <header className='character-header'>
+              <h2 className='character-name'>{props.character.name}</h2>
+            </header>
+            <ul className='character-description'>
+              <li className='character-species'>Species: {species}</li>
+              <li className='character-status'>Status: {newStatus}</li>
+              <li className='character-origin'>Origin: {props.character.origin}</li>
+              <li className='character-episodes'>Episodes: {props.character.episodes}</li>
+            </ul>
+          </div>
         </div>
       </div>
     );

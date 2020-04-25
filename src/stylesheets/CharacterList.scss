@@ -1,29 +1,17 @@
-// .character-card {
-//   background-color: rgb(255, 255, 255);
-//   border-style: solid;
-//   border-color: lightgreen;
-//   display: inline-block;
-//   border-radius: 6%;
-//   text-align: center;
-//   height: 280px;
-//   width: 180px;
-//   margin: 10px;
-// }
-
-.image {
-  height: 180px;
-  border-radius: 6%;
-}
 .items-list {
   display: flex;
   list-style-type: none;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding: 0;
+  background-color: pink;
+  position: fixed;
+  top: 30%;
 }
 .character-list {
-  position: absolute;
-  text-align: center;
-  top: 35%;
+  // position: absolute;
+  // text-align: center;
+  // top: 40%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -33,9 +21,16 @@
   overflow-wrap: wrap;
 }
 .character-list-message {
+  font-size: 28px;
   text-align: center;
   position: fixed;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media all and (min-width: 768px) {
+  .items-list {
+    position: absolute;
+    top: 50%;
+  }
 }

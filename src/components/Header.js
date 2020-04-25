@@ -4,8 +4,8 @@ import '../stylesheets/Header.scss';
 
 const Header = () => {
   return (
-    <div className='Header'>
-      <img className='Header-logo' src={logo} alt='Rick and Morty'></img>
+    <div className='header'>
+      <img className='header-logo' src={logo} alt='Rick and Morty'></img>
     </div>
   );
 };
