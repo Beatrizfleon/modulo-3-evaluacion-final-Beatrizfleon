@@ -1,6 +1,8 @@
+@import './constants.scss';
+
 .character-card-link {
   text-decoration: none;
-  color: green;
+  color: black;
 }
 
 .character-card-link:visited {
@@ -15,8 +17,9 @@
 
 .character-card {
   background-color: #69c8ecff;
+  background-color: $color-main;
   border-style: solid;
-  border-color: lightgreen;
+  border-color: $color-border;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

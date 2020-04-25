@@ -1,3 +1,5 @@
+@import './constants.scss';
+
 .character-detail-container {
   position: fixed;
   top: 50%;
@@ -25,15 +27,16 @@
   text-decoration: none;
 }
 .character-detail-card {
-  border-color: lightgreen;
+  border-color: $color-border;
   border-style: solid;
   border-radius: 6%;
   height: 350px;
-  background-color: #69c8ecff;
+  background-color: $color-main;
 }
 .character-detail-text {
   height: 120px;
   display: flex;
+
   flex-direction: column;
   justify-content: space-between;
 }
@@ -49,7 +52,12 @@
   padding-left: 0;
 }
 .fas {
-  color: lightgreen;
+  color: $color-border;
+}
+
+.go-back {
+  text-decoration: none;
+  color: $color-main;
 }
 @media all and (min-width: 768px) {
   .character-detail-container {
@@ -68,11 +76,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 550px;
-    height: 400px;
+    width: 750px;
+    height: 600px;
     padding-right: 25px;
     padding-left: 20px;
   }
+  // .character-detail-text {
+  //   height: 120px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  // }
   .character-detail-image {
     border-radius: 6%;
     height: 350px;

@@ -4,7 +4,7 @@ const getDataFromApi = () => {
     .then((data) => {
       // console.log(data.results);
 
-      return data.results.map((character) => {
+      let characterList = data.results.map((character) => {
         // console.log(character.origin.name);
         return {
           id: character.id,
@@ -16,6 +16,10 @@ const getDataFromApi = () => {
           episodes: character.episode.length,
         };
       });
+
+      return characterList.sort((o1, o2) => (o1.name > o2.name ? 1 : -1));
+
+      // return characterList.sort((o1, o2) => (o1.episodes < o2.episodes ? 1 : -1));
     });
 };
 

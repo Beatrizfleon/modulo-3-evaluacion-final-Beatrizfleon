@@ -58,7 +58,7 @@ const CharacterDetail = (props) => {
 
     return (
       <div className='character-detail-container'>
-        <Link to='/'>
+        <Link className='go-back' to='/'>
           <div className='header-return'>
             <span>
               <img className='character-detail-icon' src={Rick} alt='return-icon' onClick={handleGoHome}></img>
