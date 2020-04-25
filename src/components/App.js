@@ -40,6 +40,8 @@ const App = () => {
     // console.log(foundCharacter);
     if (foundCharacter !== undefined) {
       return <CharacterDetail handleInput={goHome} character={foundCharacter} inputValue={nameFilter} />;
+    } else {
+      return <CharacterDetail />;
     }
   };
 

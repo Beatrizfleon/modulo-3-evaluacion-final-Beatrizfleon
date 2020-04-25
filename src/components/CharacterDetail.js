@@ -6,18 +6,26 @@ import '../stylesheets/CharacterDetail.scss';
 import '../stylesheets/App.scss';
 
 const CharacterDetail = (props) => {
-  // console.log(props);
-
   const handleGoHome = () => {
     console.log('going home');
     props.handleInput(props.inputValue);
   };
 
-  console.log(`qué es props.character ${props.character}`);
-
   if (props.character === undefined) {
     console.log('es undefined');
-    return <h1>No ha seleccionado ningún personaje</h1>;
+    return (
+      <div>
+        <Link className='go-back' to='/'>
+          <div className='header-return'>
+            <span>
+              <img className='character-detail-icon' src={Rick} alt='return-icon' onClick={handleGoHome}></img>
+            </span>
+            <span className='header-return-text'>Go Back</span>
+          </div>
+        </Link>
+        <h1 className='error'>El personaje no existe :(</h1>
+      </div>
+    );
   } else {
     let newStatus;
     if (props.character.status === 'Alive') {
