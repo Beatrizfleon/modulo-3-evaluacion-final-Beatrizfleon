@@ -1,4 +1,4 @@
-@import './constants.scss';
+@import './variables.scss';
 
 .character-card-link {
   text-decoration: none;
@@ -12,14 +12,16 @@
 
 .character-card-link:hover {
   text-decoration: none;
+  text-shadow: 3px 3px 6px yellowgreen;
   color: yellow;
 }
 
 .character-card {
-  background-color: #69c8ecff;
-  background-color: $color-main;
+  // background-color: #69c8ecff;
+  background-color: #0ad8f3;
   border-style: solid;
   border-color: $color-border;
+  border-width: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,6 +30,9 @@
   height: 280px;
   width: 180px;
   margin: 10px;
+}
+.character-card:hover {
+  box-shadow: 1px 1px 10px 3px rgb(162, 255, 0);
 }
 
 .character-title {
@@ -44,7 +49,9 @@
 }
 
 .character-name {
-  font-size: 20px;
+  font-size: 18px;
   overflow-wrap: wrap;
   text-decoration: none;
+}
+@media all and (min-width: 1200px) {
 }

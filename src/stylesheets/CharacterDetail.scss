@@ -1,15 +1,14 @@
-@import './constants.scss';
+@import './variables.scss';
 
 .character-detail-container {
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-color: red;
-  border-style: solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 70vw;
 }
 
 .header-return {
@@ -19,32 +18,44 @@
   margin-bottom: 6px;
 }
 .character-detail-icon {
-  height: 20px;
+  height: 25px;
+  animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 .header-return-text {
-  // padding-top: 4px;
   padding-left: 5px;
-  text-decoration: none;
+  font-size: 20px;
 }
 .character-detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-color: $color-border;
   border-style: solid;
+  border-width: 5px;
   border-radius: 6%;
-  height: 350px;
-  background-color: $color-main;
+  height: 380px;
+  background-color: #0ad8f3;
 }
 .character-detail-text {
   height: 120px;
   display: flex;
-
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 25px;
 }
 .character-detail-image {
-  border-radius: 6%;
+  border-radius: 7%;
   height: 210px;
 }
-.character-name {
+.character-detail-name {
   font-weight: bold;
 }
 .character-description {
@@ -52,19 +63,21 @@
   padding-left: 0;
 }
 .fas {
-  color: $color-border;
+  color: black;
 }
 
 .go-back {
   text-decoration: none;
-  color: $color-main;
+  color: black;
 }
 @media all and (min-width: 768px) {
   .character-detail-container {
-    top: 70%;
+    width: 85vw;
+    top: 50%;
+    align-items: center;
   }
   .character-detail-icon {
-    height: 20px;
+    height: 30px;
   }
   .header-return-text {
     padding-left: 6px;
@@ -74,31 +87,69 @@
   .character-detail-card {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    width: 750px;
-    height: 600px;
-    padding-right: 25px;
-    padding-left: 20px;
+    width: 70vw;
   }
-  // .character-detail-text {
-  //   height: 120px;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: space-between;
-  // }
-  .character-detail-image {
-    border-radius: 6%;
-    height: 350px;
+  .character-detail-text {
+    margin-bottom: 0;
+    margin-left: 50px;
   }
-  .character-description {
+  .character-header {
     text-align: left;
   }
+  .character-description {
+    padding-left: 0;
+    align-items: flex-start;
+  }
+
+  .character-detail-image {
+    border-radius: 6%;
+    height: 90%;
+
+    margin-left: 20px;
+  }
+
   .character-detail-icon {
     height: 30px;
   }
   .header-return-text {
     padding-left: 6px;
     text-decoration: none;
+  }
+}
+@media all and (min-width: 1200px) {
+  .character-detail-card {
+    height: 500px;
+    width: 1000px;
+    border-radius: 30px;
+  }
+  .character-detail-icon {
+    height: 45px;
+  }
+  .header-return-text {
+    font-size: 30px;
+  }
+  .character-description {
+    font-size: 50px;
+  }
+  .character-li {
+    font-size: 24px;
+  }
+  .character-detail-name {
+    font-size: 28px;
+  }
+  .character-detail-span {
+    font-size: 24px;
+  }
+  .fa-female,
+  .fa-male {
+    font-size: 24px;
+  }
+  .fa-reddit-alien {
+    font-size: 24px;
+  }
+  .fa-smile {
+    font-size: 24px;
   }
 }

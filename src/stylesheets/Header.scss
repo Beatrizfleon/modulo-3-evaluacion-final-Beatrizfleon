@@ -1,10 +1,16 @@
 .header-logo {
+  // position: fixed;
   text-align: center;
-  width: 280px;
-  margin: 25px;
+  width: 70vw;
+  margin-top: 50px;
 }
 @media all and (min-width: 768px) {
   .header-logo {
-    width: 500px;
+    width: 600px;
+  }
+}
+@media all and (min-width: 1200px) {
+  .header-logo {
+    width: 600px;
   }
 }

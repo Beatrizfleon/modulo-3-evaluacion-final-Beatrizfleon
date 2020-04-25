@@ -4,16 +4,14 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 0;
-
-  position: fixed;
-  top: 30%;
 }
 .character-list {
   // position: absolute;
   // text-align: center;
   // top: 40%;
+  overflow-y: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 .name {
@@ -31,11 +29,19 @@
 @media all and (min-width: 768px) {
   .items-list {
     position: absolute;
-    top: 50%;
+    top: 40%;
+    margin-left: 50px;
+    margin-right: 50px;
   }
   .character-description {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+@media all and (min-width: 768px) {
+  .items-list {
+    position: absolute;
+    top: 30%;
   }
 }

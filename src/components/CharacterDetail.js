@@ -22,19 +22,19 @@ const CharacterDetail = (props) => {
     let newStatus;
     if (props.character.status === 'Alive') {
       newStatus = (
-        <span>
+        <span className='character-detail-span'>
           Alive <i className='far fa-smile'></i>
         </span>
       );
     } else if (props.character.status === 'Dead') {
       newStatus = (
-        <span>
+        <span className='character-detail-span'>
           Dead <i class='fas fa-skull'></i>
         </span>
       );
     } else {
       newStatus = (
-        <span>
+        <span className='character-detail-span'>
           Unknown
           <i className='far fa-question-circle'></i>
         </span>
@@ -44,14 +44,12 @@ const CharacterDetail = (props) => {
     // let species = props.character.status === 'Alive' ? <Emoji symbol='🙂' label='alive' /> : props.character.status === 'Death' ? <Emoji symbol='💀' label='death' /> : <Emoji symbol='?' label='unknown' />;
     let species =
       props.character.species === 'Human' ? (
-        <span>
-          Human
-          {''}
-          <i className='fas fa-female'></i>
+        <span className='character-detail-span'>
+          Human <i className='fas fa-female'></i>
           <i className='fas fa-male'></i>
         </span>
       ) : (
-        <span>
+        <span className='character-detail-span'>
           Alien <i className='fab fa-reddit-alien'></i>
         </span>
       );
@@ -70,13 +68,13 @@ const CharacterDetail = (props) => {
           <img className='character-detail-image' src={props.character.image} alt={`Foto de ${props.character.image}`}></img>
           <div className='character-detail-text'>
             <header className='character-header'>
-              <h2 className='character-name'>{props.character.name}</h2>
+              <h2 className='character-detail-name'>{props.character.name}</h2>
             </header>
             <ul className='character-description'>
-              <li className='character-species'>Species: {species}</li>
-              <li className='character-status'>Status: {newStatus}</li>
-              <li className='character-origin'>Origin: {props.character.origin}</li>
-              <li className='character-episodes'>Episodes: {props.character.episodes}</li>
+              <li className='character-li'>Species: {species}</li>
+              <li className='character-li'>Status: {newStatus}</li>
+              <li className='character-li'>Origin: {props.character.origin}</li>
+              <li className='character-li'>Episodes: {props.character.episodes}</li>
             </ul>
           </div>
         </div>
