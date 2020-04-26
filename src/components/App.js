@@ -46,7 +46,7 @@ const App = () => {
   };
 
   const goHome = (previousFilter) => {
-    console.log(`filtro inicial:${previousFilter}`);
+    // console.log(`filtro inicial:${previousFilter}`);
     setNameFilter(previousFilter);
   };
 

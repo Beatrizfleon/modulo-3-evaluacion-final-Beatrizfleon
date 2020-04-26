@@ -12,7 +12,7 @@ const CharacterDetail = (props) => {
   };
 
   if (props.character === undefined) {
-    console.log('es undefined');
+    // console.log('es undefined');
     return (
       <div>
         <Link className='go-back' to='/'>

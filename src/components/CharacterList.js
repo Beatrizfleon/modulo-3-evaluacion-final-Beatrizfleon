@@ -3,7 +3,7 @@ import CharacterCard from './CharacterCard';
 import '../stylesheets/CharacterList.scss';
 
 const CharacterList = (props) => {
-  console.log(props);
+  // console.log(props);
 
   const itemsList = props.characters.map((character) => {
     return <CharacterCard key={character.id} character={character} />;
