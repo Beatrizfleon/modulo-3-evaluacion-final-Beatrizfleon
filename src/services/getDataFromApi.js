@@ -14,6 +14,7 @@ const getDataFromApi = () => {
           status: character.status,
           origin: character.origin.name,
           episodes: character.episode.length,
+          gender: character.gender,
         };
       });
 

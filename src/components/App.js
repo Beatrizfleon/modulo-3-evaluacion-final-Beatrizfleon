@@ -11,9 +11,10 @@ import '../stylesheets/App.scss';
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
+  const [genderFilter, setGenderFilter] = useState('All');
 
   useEffect(() => {
-    console.log('me estoy montando');
+    // console.log('me estoy montando');
     getDataFromApi().then((data) => setCharacters(data));
   }, []);
   // console.log(characters);
@@ -22,13 +23,24 @@ const App = () => {
     console.log('manejando los filtros', data);
     if (data.key === 'name') {
       setNameFilter(data.value);
+    } else if (data.key === 'gender') {
+      setGenderFilter(data.value);
+      console.log('filter ---> ' + data.value);
     }
   };
   // console.log('Name:', nameFilter);
 
-  const filteredCharacters = characters.filter((character) => {
-    return character.name.toUpperCase().includes(nameFilter.toUpperCase());
-  });
+  const filteredCharacters = characters
+    .filter((character) => {
+      return character.name.toUpperCase().includes(nameFilter.toUpperCase());
+    })
+    .filter((character) => {
+      if (genderFilter === 'All') {
+        return true;
+      } else {
+        return character.gender === genderFilter;
+      }
+    });
 
   const renderCharacterDetail = (props) => {
     const characterId = props.match.params.id;
