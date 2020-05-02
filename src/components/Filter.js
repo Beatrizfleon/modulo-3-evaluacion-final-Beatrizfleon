@@ -13,6 +13,13 @@ const Filter = (props) => {
       key: 'name',
     });
   };
+  const handleChange2 = (ev) => {
+    console.log(ev.target.value);
+    props.handleFilter({
+      value: ev.target.value,
+      key: 'location',
+    });
+  };
   return (
     <div className='searchBar'>
       <form className='search'>
@@ -20,6 +27,7 @@ const Filter = (props) => {
         <button type='submit' className='searchbtn'>
           {/* <i className='fas fa-search'></i> */}
         </button>
+        <input type='text' className='searchbox' name='location' id='location' onChange={handleChange2} value={props.nameLocation}></input>
       </form>
     </div>
   );

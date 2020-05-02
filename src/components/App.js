@@ -11,6 +11,7 @@ import '../stylesheets/App.scss';
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
+  const [nameLocation, setNameLocation] = useState('');
 
   useEffect(() => {
     console.log('me estoy montando');
@@ -22,13 +23,19 @@ const App = () => {
     console.log('manejando los filtros', data);
     if (data.key === 'name') {
       setNameFilter(data.value);
+    } else if (data.key === 'location') {
+      setNameLocation(data.value);
     }
   };
   // console.log('Name:', nameFilter);
 
-  const filteredCharacters = characters.filter((character) => {
-    return character.name.toUpperCase().includes(nameFilter.toUpperCase());
-  });
+  const filteredCharacters = characters
+    .filter((character) => {
+      return character.name.toUpperCase().includes(nameFilter.toUpperCase());
+    })
+    .filter((character) => {
+      return character.location.toUpperCase().includes(nameLocation.toUpperCase());
+    });
 
   const renderCharacterDetail = (props) => {
     const characterId = props.match.params.id;
@@ -55,7 +62,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path='/'>
-          <Filter handleFilter={handleFilter} previousFilter={nameFilter} />
+          <Filter handleFilter={handleFilter} previousFilter={nameFilter} nameLocation={nameLocation} />
           <CharacterList characters={filteredCharacters} inputValue={nameFilter} />
         </Route>
         <Route path='/character/:id' render={renderCharacterDetail}></Route>
