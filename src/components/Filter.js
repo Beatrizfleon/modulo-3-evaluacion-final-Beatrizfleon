@@ -16,7 +16,7 @@ const Filter = (props) => {
   return (
     <div className='searchBar'>
       <form className='search'>
-        <input className='searchbox' type='text' name='name' id='name' placeholder='Enter the character' onChange={handleChange} value={props.previousFilter}></input>
+        <input className='searchbox' type='text' name='name' id='name' placeholder='Enter the character...' onChange={handleChange} value={props.previousFilter}></input>
         <button type='submit' className='searchbtn'>
           {/* <i className='fas fa-search'></i> */}
         </button>

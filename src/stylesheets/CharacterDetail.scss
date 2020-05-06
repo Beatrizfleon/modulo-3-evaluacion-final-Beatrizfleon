@@ -1,14 +1,17 @@
 @import './variables.scss';
 
 .character-detail-container {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // top: 70%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  padding-top: 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 70vw;
+  align-content: center;
+  width: 230px;
+  margin: auto;
 }
 
 .header-return {
@@ -52,7 +55,7 @@
   margin-bottom: 25px;
 }
 .character-detail-image {
-  border-radius: 7%;
+  border-radius: 5%;
   height: 210px;
 }
 .character-detail-name {
@@ -76,9 +79,10 @@
 }
 @media all and (min-width: 768px) {
   .character-detail-container {
-    width: 85vw;
+    width: 90vw;
     top: 50%;
     align-items: center;
+    margin-bottom: 10px;
   }
   .character-detail-icon {
     height: 30px;
@@ -93,11 +97,12 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    width: 70vw;
+    padding-left: 10px;
+    width: 640px;
   }
   .character-detail-text {
     margin-bottom: 0;
-    margin-left: 50px;
+    margin-left: 20px;
   }
   .character-header {
     text-align: left;
@@ -110,23 +115,23 @@
   .character-detail-image {
     border-radius: 6%;
     height: 90%;
-
-    margin-left: 20px;
+    margin-left: 10px;
   }
 
   .character-detail-icon {
     height: 30px;
   }
   .header-return-text {
-    padding-left: 6px;
+    padding-left: 20px;
     text-decoration: none;
   }
 }
 @media all and (min-width: 1200px) {
   .character-detail-card {
     height: 500px;
-    width: 1000px;
+    width: 900px;
     border-radius: 30px;
+    padding-left: 10px;
   }
   .character-detail-icon {
     height: 45px;

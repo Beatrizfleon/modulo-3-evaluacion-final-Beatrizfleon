@@ -6,7 +6,7 @@ import '../stylesheets/CharacterCard.scss';
 const CharacterCard = (props) => {
   // console.log(props.character.id);
   return (
-    <li>
+    <li className='character-card-li'>
       <Link className='character-card-link' to={`/character/${props.character.id}`}>
         <div className='character-card'>
           <img className='character-image' src={props.character.image} alt={`Foto de ${props.character.image}`}></img>

@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+.character-card-li {
+  grid-column: 2/6;
+}
+
 .character-card-link {
   text-decoration: none;
   color: black;
@@ -10,28 +14,28 @@
   color: black;
 }
 
-.character-card-link:hover {
-  text-decoration: none;
-  text-shadow: 3px 3px 6px yellowgreen;
-  color: yellow;
-}
+// .character-card-link:hover {
+//   // border-color: $color-border;
+// }
 
 .character-card {
-  // background-color: #69c8ecff;
   background-color: #0ad8f3;
   border-style: solid;
-  border-color: $color-border;
+  border-color: #0ad8f3;
   border-width: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   border-radius: 6%;
   text-align: center;
   height: 280px;
   width: 180px;
   margin: 10px;
+  box-shadow: 0 5px 15px black;
 }
 .character-card:hover {
+  text-decoration: none;
+  text-shadow: 3px 3px 6px yellowgreen;
+  color: #e7e866;
+  border-style: solid;
+  border-color: lightgreen;
   box-shadow: 1px 1px 10px 3px rgb(162, 255, 0);
 }
 
@@ -45,13 +49,21 @@
 }
 .character-image {
   height: 180px;
-  border-radius: 6%;
+  border-radius: 5%;
 }
 
 .character-name {
   font-size: 18px;
   overflow-wrap: wrap;
   text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+  .character-card-li {
+    display: contents;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
 }
 @media all and (min-width: 1200px) {
 }

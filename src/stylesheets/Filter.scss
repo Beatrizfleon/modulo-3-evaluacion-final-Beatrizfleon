@@ -7,12 +7,7 @@
 .search {
   width: 50%;
   left: 50%;
-  // position: fixed;
-  // text-align: center;
-  // width: 100%;
-  // left: 50%;
-  // top: 24%;
-  // transform: translate(-50%, -50%);
+
   padding-bottom: 10px;
 }
 
@@ -29,7 +24,7 @@
   outline: none;
 }
 .searchbox::placeholder {
-  color: lightgreen;
+  color: black;
 }
 
 .searchbox:focus {
